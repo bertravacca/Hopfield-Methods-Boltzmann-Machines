@@ -1,0 +1,27 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Visualization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+close all;
+figure(1) % convergence rates
+plot(log(results.cost_PGD),'r--')
+hold on
+plot(log(results.cost_SHM),'b--')
+plot(log(results.cost_PHM),'g--')
+
+
+figure(2) % final cost 
+bar([new_cost_QP,new_cost_PGD,new_cost_SHM,new_cost_PHM])
+
+
+figure(3) % look if the constraint supply=demand is respected
+bar([abs_unbalance_QP,abs_unbalance_PGD,abs_unbalance_SHM,abs_unbalance_PHM])
+
+
+figure(4) % figure to look at final cost 
+bar([final_cost_QP,final_cost_PGD,final_cost_SHM, final_cost_PHM])
+
+
+figure(5) % look if the constraint supply=demand is respected
+bar([final_abs_unbalance_QP,final_abs_unbalance_PGD,final_abs_unbalance_SHM,final_abs_unbalance_PHM])
